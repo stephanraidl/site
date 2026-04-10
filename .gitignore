@@ -29,6 +29,8 @@ build/
 
 
 CLAUDE_CODE_GUIDE.md
+optimisations.md
+things_for_me_to_do.txt
 
 # Zip archives
 *.zip
