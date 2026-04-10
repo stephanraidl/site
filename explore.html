@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore the World — Stephan Raidl · Wingfoil Spot Guide</title>
+  <meta name="description" content="World-class wingfoil spot experiences in Madeira, Tenerife, Cape Verde and Denmark. Fly in, ride world-class spots with a pro guide." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── EXPLORE-SPECIFIC STYLES ── */
+
+    .explore-hero {
+      position: relative;
+      height: 100svh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      padding: 0 clamp(20px, 5vw, 80px);
+      overflow: hidden;
+    }
+    .explore-hero .hero-content { max-width: 860px; }
+    .explore-hero .hero-title {
+      font-size: clamp(60px, 10vw, 140px);
+    }
+
+    /* CONCEPT SECTION */
+    .concept {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 7vw, 120px);
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: var(--section-pad) clamp(20px, 5vw, 80px);
+      align-items: center;
+    }
+    .concept-text h2 { margin-bottom: 24px; }
+    .concept-text p { margin-bottom: 18px; line-height: 1.75; }
+    .concept-text p strong { color: var(--white); font-weight: 500; }
+
+    .concept-boxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .concept-box {
+      background: var(--navy-mid);
+      border-radius: 8px;
+      padding: 24px 20px;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-top: 3px solid var(--teal);
+    }
+    .concept-box-icon { font-size: 26px; margin-bottom: 12px; display: block; }
+    .concept-box h4 { color: var(--white); font-size: 15px; font-weight: 500; margin-bottom: 8px; }
+    .concept-box p { font-size: 13px; color: var(--text-dim); line-height: 1.6; margin: 0; }
+
+    /* WHAT YOU GET */
+    .what-you-get {
+      background: var(--navy-mid);
+      padding: var(--section-pad) clamp(20px, 5vw, 80px);
+    }
+    .what-you-get-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .what-you-get h2 { margin-bottom: 12px; }
+    .what-you-get .sub { color: var(--text-dim); font-size: 17px; margin-bottom: 56px; max-width: 540px; }
+
+    .deliverables-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .deliverable {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 24px;
+      background: var(--navy);
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .deliverable-num {
+      font-family: var(--font-display);
+      font-size: 36px;
+      color: var(--teal);
+      line-height: 1;
+      flex-shrink: 0;
+      opacity: 0.5;
+    }
+    .deliverable h4 { color: var(--white); font-size: 15px; font-weight: 500; margin-bottom: 6px; }
+    .deliverable p { font-size: 13px; color: var(--text-dim); line-height: 1.6; margin: 0; }
+
+    /* DESTINATIONS */
+    .destinations-section {
+      padding: var(--section-pad) clamp(20px, 5vw, 80px);
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .destinations-section > h2 { margin-bottom: 64px; }
+
+    .destination-block {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: clamp(32px, 5vw, 80px);
+      margin-bottom: 100px;
+      padding-bottom: 100px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      align-items: start;
+    }
+    .destination-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .destination-block.flip { grid-template-columns: 1fr 1.1fr; }
+    .destination-block.flip .dest-media { order: 2; }
+    .destination-block.flip .dest-content { order: 1; }
+
+    .dest-media { position: relative; }
+    .dest-hero-img {
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      position: relative;
+    }
+    .dest-hero-img .img-placeholder { height: 100%; aspect-ratio: auto; border-radius: 8px; }
+
+    .dest-flag {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(13,27,42,0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 4px;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 2;
+    }
+    .dest-flag .flag-emoji { font-size: 20px; }
+    .dest-flag span {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .dest-thumb-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .dest-thumb {
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 1/1;
+    }
+    .dest-thumb .img-placeholder { aspect-ratio: auto; height: 100%; }
+
+    .dest-content { padding-top: 8px; }
+    .dest-label {
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--teal);
+      display: block;
+      margin-bottom: 12px;
+    }
+    .dest-content h3 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 4.5vw, 62px);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--white);
+      line-height: 0.95;
+      margin-bottom: 8px;
+    }
+    .dest-content h3 em {
+      font-family: var(--font-italic);
+      font-style: italic;
+      color: var(--teal);
+      font-size: 0.7em;
+      text-transform: none;
+      letter-spacing: 0;
+      display: block;
+      line-height: 1.4;
+    }
+    .dest-tagline {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+    .dest-description { font-size: 15px; line-height: 1.75; color: var(--text); margin-bottom: 28px; }
+
+    /* Spot details */
+    .spot-details {
+      background: var(--navy-mid);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+    }
+    .spot-detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      font-size: 14px;
+    }
+    .spot-detail-row:last-child { border-bottom: none; }
+    .spot-detail-row .label {
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .spot-detail-row .value { color: var(--white); font-weight: 400; }
+    .spot-detail-row .value.tag {
+      background: rgba(0,194,168,0.12);
+      color: var(--teal);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      padding: 4px 10px;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+
+    .spot-highlights {
+      margin-bottom: 28px;
+    }
+    .spot-highlights h4 {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+    .spot-highlights ul { list-style: none; }
+    .spot-highlights li {
+      font-size: 14px;
+      color: var(--text);
+      padding: 6px 0;
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+    }
+    .spot-highlights li::before {
+      content: '—';
+      color: var(--teal);
+      flex-shrink: 0;
+    }
+
+    .dest-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* STATUS BADGE */
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .status-badge.pilot {
+      background: rgba(255, 190, 50, 0.12);
+      color: #ffbe32;
+      border: 1px solid rgba(255, 190, 50, 0.3);
+    }
+    .status-badge.pilot::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #ffbe32;
+      animation: pulse-yellow 2s infinite;
+    }
+    .status-badge.live {
+      background: rgba(0, 194, 168, 0.12);
+      color: var(--teal);
+      border: 1px solid rgba(0, 194, 168, 0.3);
+    }
+    .status-badge.live::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+      animation: pulse-teal 2s infinite;
+    }
+    @keyframes pulse-yellow {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    @keyframes pulse-teal {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    /* HOW IT WORKS */
+    .how-it-works {
+      background: var(--navy-mid);
+      padding: var(--section-pad) clamp(20px, 5vw, 80px);
+    }
+    .how-it-works-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .how-it-works h2 { margin-bottom: 12px; }
+    .how-sub { color: var(--text-dim); margin-bottom: 56px; font-size: 16px; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(10% + 24px);
+      right: calc(10% + 24px);
+      height: 1px;
+      background: linear-gradient(to right, var(--teal), rgba(0,194,168,0.2));
+      z-index: 0;
+    }
+    .step {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 0 12px;
+    }
+    .step-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--navy);
+      border: 2px solid var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-family: var(--font-display);
+      font-size: 22px;
+      color: var(--teal);
+    }
+    .step h4 { color: var(--white); font-size: 14px; font-weight: 500; margin-bottom: 8px; }
+    .step p { font-size: 12px; color: var(--text-dim); line-height: 1.6; }
+
+    /* PILOT CTA */
+    .pilot-cta {
+      padding: var(--section-pad) clamp(20px, 5vw, 80px);
+      text-align: center;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+    .pilot-cta::before {
+      content: 'EXPLORE';
+      position: absolute;
+      font-family: var(--font-display);
+      font-size: clamp(120px, 20vw, 280px);
+      color: rgba(255,255,255,0.02);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      pointer-events: none;
+      letter-spacing: 0.1em;
+    }
+    .pilot-cta-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+    .pilot-cta h2 { margin-bottom: 20px; }
+    .pilot-cta p { font-size: 17px; color: var(--text-dim); margin-bottom: 40px; line-height: 1.7; }
+    .pilot-cta .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .deliverables-grid { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+      .steps::before { display: none; }
+      .steps .step:nth-child(n+4) { margin-top: 0; }
+    }
+    @media (max-width: 768px) {
+      .concept { grid-template-columns: 1fr; }
+      .concept-boxes { grid-template-columns: 1fr 1fr; }
+      .deliverables-grid { grid-template-columns: 1fr; }
+      .destination-block,
+      .destination-block.flip { grid-template-columns: 1fr; }
+      .destination-block.flip .dest-media { order: 0; }
+      .destination-block.flip .dest-content { order: 0; }
+      .steps { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .concept-boxes { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">Stephan Raidl</a>
+    <button class="nav-burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="camps.html">Foil Camps</a></li>
+      <li><a href="explore.html" class="active">Explore</a></li>
+      <li><a href="coaching.html">Coaching</a></li>
+      <li><a href="partnership.html">Partnership</a></li>
+      <li><a href="contact.html" class="nav-cta">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <header class="explore-hero hero">
+    <div class="hero-bg">
+      <!-- Replace: <img src="images/explore-hero.jpg" alt="Wingfoiling world-class spots" /> -->
+      <div class="hero-placeholder" style="background: linear-gradient(160deg, #061220 0%, #0d2237 40%, #0a1c30 100%);"></div>
+    </div>
+    <div class="hero-overlay" style="background: linear-gradient(to top, rgba(6,18,32,0.95) 0%, rgba(6,18,32,0.4) 60%, rgba(6,18,32,0.2) 100%);"></div>
+    <div class="hero-content" style="position:relative;z-index:2;">
+      <p class="hero-eyebrow">Madeira · Tenerife · Cape Verde · The Netherlands</p>
+      <h1 class="hero-title" style="display:flex;flex-direction:column;line-height:0.92;margin-bottom:28px;">
+        <span style="font-family:var(--font-display);font-size:clamp(60px,10vw,140px);text-transform:uppercase;letter-spacing:0.02em;color:var(--white);">WORLD</span>
+        <span style="font-family:var(--font-display);font-size:clamp(60px,10vw,140px);text-transform:uppercase;letter-spacing:0.02em;color:var(--white);">CLASS</span>
+        <span style="font-family:var(--font-italic);font-style:italic;font-size:clamp(50px,8vw,110px);color:var(--teal);letter-spacing:0;">Spots.</span>
+      </h1>
+      <p class="hero-sub">Fly in. I'll show you everything else.</p>
+      <div class="hero-actions">
+        <a href="#destinations" class="btn btn-primary">Explore Destinations</a>
+        <a href="contact.html?type=explore" class="btn btn-ghost">Register Interest</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </header>
+
+  <!-- ─── CONCEPT ─── -->
+  <section class="concept">
+    <div class="concept-text">
+      <p class="section-label">The concept</p>
+      <h2>Your travel.<br /><em>My knowledge.</em></h2>
+      <p>Some of the best wingfoil spots in the world are in places most people visit anyway — Madeira, Tenerife or Fuerteventura on the Canary Islands, Cape Verde Sal or Boa Vista. The difference between a frustrating session and the best ride of your life is knowing where and when to go and get in, how the currents and tides are influencing the spots and what to watch out for.<br /><br />Get inspired and stay safe, follow me — I'll show you the way.</p>
+      <p>You fly in on your own terms with your own gear, stay where you like, and I meet you at the spot or pick you up and we drive together to the spot. You can be alone or with buddies.<br /><br />Full spot knowledge, on-water coaching, video feedback, and sessions built around the conditions that day — not a fixed programme.</p>
+      <p>This is a <strong>pilot offering</strong> — I'm building out these experiences now and taking expressions of interest for 2026/2027. First to register gets priority spots and earns a say in how it's shaped.</p>
+    </div>
+    <div class="concept-boxes">
+      <div class="concept-box">
+        <span class="concept-box-icon">🌊</span>
+        <h4>Spot Intel</h4>
+        <p>Entrances, exits, hazards, wind shadows, tide windows — every detail of each spot.</p>
+      </div>
+      <div class="concept-box">
+        <span class="concept-box-icon">🎥</span>
+        <h4>Video Coaching</h4>
+        <p>In-water filming and post-session video analysis. You leave with footage and feedback.</p>
+      </div>
+      <div class="concept-box">
+        <span class="concept-box-icon">📍</span>
+        <h4>Local Access</h4>
+        <p>Secret launches, local knowledge, gear hire contacts — the things that take years to learn.</p>
+      </div>
+      <div class="concept-box">
+        <span class="concept-box-icon">🤙</span>
+        <h4>Your Freedom</h4>
+        <p>Stay where you want, travel on your schedule. I'm a guide, not a package tour.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WHAT YOU GET ─── -->
+  <section class="what-you-get">
+    <div class="what-you-get-inner">
+      <p class="section-label">Every experience includes</p>
+      <h2>What you get</h2>
+      <p class="sub">Everything you need to make the most of a world-class spot.</p>
+      <div class="deliverables-grid">
+        <div class="deliverable">
+          <span class="deliverable-num">01</span>
+          <div>
+            <h4>Spot Orientation Session</h4>
+            <p>A full briefing before we hit the water — wind patterns, entry/exit points, wave reading, local rules and etiquette. I get in first so you can have a look at how and where.</p>
+          </div>
+        </div>
+        <div class="deliverable">
+          <span class="deliverable-num">02</span>
+          <div>
+            <h4>On-Water Guidance</h4>
+            <p>I'm in the water with you. Real-time tips, positioning advice, and knowing when to push and when to hold back.</p>
+          </div>
+        </div>
+        <div class="deliverable">
+          <span class="deliverable-num">03</span>
+          <div>
+            <h4>Video From the Water</h4>
+            <p>Action footage of your sessions. Good for memories. Better for coaching. You keep everything.</p>
+          </div>
+        </div>
+        <div class="deliverable">
+          <span class="deliverable-num">04</span>
+          <div>
+            <h4>Post-Session Analysis</h4>
+            <p>Sit-down review of your video with specific feedback and a drills plan to take home.</p>
+          </div>
+        </div>
+        <div class="deliverable">
+          <span class="deliverable-num">05</span>
+          <div>
+            <h4>Conditions Monitoring</h4>
+            <p>I track the forecast and tell you which spots are firing each day. Decisions based on real experience, not guesswork.</p>
+          </div>
+        </div>
+        <div class="deliverable">
+          <span class="deliverable-num">06</span>
+          <div>
+            <h4>Local Network Access</h4>
+            <p>Gear hire, repair contacts, best coffee, breakfast, lunch and dinner places — the practical stuff that makes a trip run smoothly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── DESTINATIONS ─── -->
+  <section class="destinations-section" id="destinations">
+    <p class="section-label">The destinations</p>
+    <h2>Where we go</h2>
+
+    <!-- MADEIRA -->
+    <div class="destination-block">
+      <div class="dest-media">
+        <div class="dest-hero-img">
+          <img src="images/Madeira_coastline-compressed.jpg" alt="Madeira Coastline" style="width:100%;height:100%;object-fit:cover;display:block;" />
+          <div class="dest-flag">
+            <span class="flag-emoji">🇵🇹</span>
+            <span>Madeira</span>
+          </div>
+        </div>
+        <div class="dest-thumb-row">
+          <div class="dest-thumb"><img src="images/Paul_do_mar.jpg" alt="Paul do Mar" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+          <div class="dest-thumb"><img src="images/low_pixel_backroll-compressed.jpg" alt="Backroll Madeira" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+          <div class="dest-thumb"><img src="images/Sunset_Madalena_do_Mar-compressed.jpg" alt="Sunset Madalena do Mar" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+        </div>
+      </div>
+      <div class="dest-content">
+        <span class="status-badge pilot">Coming 2026/2027 — Pilot</span>
+        <span class="dest-label">Atlantic Island · Portugal</span>
+        <h3>Madeira <em>The Wild Atlantic</em></h3>
+        <p class="dest-tagline">Volcanic coastline · Swell-fed waves · Year-round wind</p>
+        <p class="dest-description">Madeira is raw, dramatic, and one of the most underrated big wave wingfoil destinations in the Atlantic — few people come to wingfoil here. The island's rugged north coast takes swell from the open ocean, creating consistent waves in a landscape that looks like nowhere else on earth.</p>
+        <p class="dest-description">The coast is unforgiving and the waves in the winter months are big — as in &gt;3m. Wind is mostly reliable depending on the season. Best not to go alone on these days.</p>
+        <p class="dest-description">The key is knowing which coast is working on any given day. I've spent time here building knowledge of different spots — the launches that look sketchy but are fine, the ones that look perfect and aren't, and the windows in the forecast that make everything click.</p>
+        <p class="dest-description">I spend quite some time there so get in touch and we can look at calendar dates.</p>
+        <div class="spot-details">
+          <div class="spot-detail-row">
+            <span class="label">Big Wave Season</span>
+            <span class="value">November – March</span>
+          </div>
+          <div class="spot-detail-row">
+            <span class="label">Wind</span>
+            <span class="value">NE Trade / NW Atlantic swell</span>
+          </div>
+          <div class="spot-detail-row">
+            <span class="label">Level</span>
+            <span class="value tag">Advanced</span>
+          </div>
+          <div class="spot-detail-row">
+            <span class="label">Getting there</span>
+            <span class="value">Direct flights from most EU cities</span>
+          </div>
+        </div>
+        <div class="spot-highlights">
+          <h4>What I'll show you</h4>
+          <ul>
+            <li>The north western coast, Paul do Mar, Madalena do Mar, Reis Magos, Porto Moniz</li>
+            <li>Safe launch and landing zones on rocky coastlines</li>
+            <li>How to position for the best rides on point-break setups</li>
+            <li>Managing gusty, terrain-affected wind — Madeira's main challenge</li>
+          </ul>
+        </div>
+        <div class="dest-cta">
+          <a href="contact.html?type=explore&dest=madeira" class="btn btn-primary">Register Interest</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- TENERIFE -->
+    <div class="destination-block flip">
+      <div class="dest-media">
+        <div class="dest-hero-img">
+          <img src="images/spot_view5-compressed.jpg" alt="Tenerife Spot View" style="width:100%;height:100%;object-fit:cover;display:block;" />
+          <div class="dest-flag">
+            <span class="flag-emoji">🇪🇸</span>
+            <span>Tenerife</span>
+          </div>
+        </div>
+        <div class="dest-thumb-row">
+          <div class="dest-thumb"><img src="images/Tenerife_LaJacinta.jpg" alt="Tenerife La Jacinta" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+          <div class="dest-thumb"><img src="images/vertical_takeoff.jpg" alt="Vertical Takeoff" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+          <div class="dest-thumb"><img src="images/Gran_Canaria_sunrise-compressed.jpg" alt="Gran Canaria Sunrise" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+        </div>
+      </div>
+      <div class="dest-content">
+        <span class="status-badge pilot">Coming 2026/2027 — Pilot</span>
+        <span class="dest-label">Canary Islands · Spain</span>
+        <h3>Tenerife <em>The Trade Wind Island</em></h3>
+        <p class="dest-tagline">Consistent NE trades · Flat water bays · Wave spots · Downwind</p>
+        <p class="dest-description">Tenerife has everything — reliable northeast trade winds, spots that suit every level from glassy flat-water bays to proper waves all at El Médano. It's also one of the most accessible islands in the Canaries, with year-round warm weather and direct connections from everywhere in Europe.</p>
+        <p class="dest-description">The wind when it's on is on, really nuking — high jumps or downwind runs with small gear are frequent. I used my 2.0m² this winter two days in a row and still was quite overpowered...</p>
+        <p class="dest-description">The waves can be small or bigger, but the spot is really gentle and easy as it has sand beaches, not much current and few rocks — only at El Cabezo.</p>
+        <p class="dest-description">A must if you like warm weather, 80% wind days and good food. A very big watersport community and great people.</p>
+        <div class="spot-details">
+          <div class="spot-detail-row">
+            <span class="label">Best season</span>
+            <span class="value">Year-round (peak: May – Sep)</span>
+          </div>
+          <div class="spot-detail-row">
+            <span class="label">Wind</span>
+            <span class="value">NE Trade winds, consistent</span>
+          </div>
+          <div class="spot-detail-row">
+            <span class="label">Level</span>
+            <span class="value tag">All levels</span>
+          </div>
+          <div class="spot-detail-row">
+            <span class="label">Getting there</span>
+            <span class="value">TFS or TFN — many direct routes</span>
+          </div>
+        </div>
+        <div class="spot-highlights">
+          <h4>What I'll show you</h4>
+          <ul>
+            <li>La Jacinta wave spot, El Cabezo, down/upwind from the harbour, or winging up the coast if it's offshore</li>
+            <li>Best conditions windows for progression vs wave riding</li>
+            <li>We can shuttle for downwinders or preferably go upwind wind powered for more time on the water and less in the car</li>
+            <li>When it's nuking, let's see how high we can jump — it's all about trajectory, speed and hangtime</li>
+          </ul>
+        </div>
+        <div class="dest-cta">
+          <a href="contact.html?type=explore&dest=tenerife" class="btn btn-primary">Register Interest</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAPE VERDE -->
+    <div class="destination-block">
+      <div class="dest-media">
+        <div class="dest-hero-img">
+          <img src="images/wave_almost_cath_me.jpg" alt="Wave Cape Verde" style="width:100%;height:100%;object-fit:cover;display:block;" />
+          <div class="dest-flag">
+            <span class="flag-emoji">🇨🇻</span>
+            <span>Cape Verde</span>
+          </div>
+        </div>
+        <div class="dest-thumb-row">
+          <div class="dest-thumb"><img src="images/Me_opening_door-compressed.jpg" alt="Cape Verde" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+          <div class="dest-thumb"><img src="images/backroll_Sal-compressed.jpg" alt="Backroll Sal" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+          <div class="dest-thumb"><img src="images/shiny_pickup_SAL-compressed.jpg" alt="Pickup SAL" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+        </div>
+      </div>
+      <div class="dest-content">
+        <span class="status-badge pilot">Coming 2026/2027 — Pilot</span>
+        <span class="dest-label">West Africa · Atlantic Ocean</span>
+        <h3>Cape Verde <em>The Wind Factory</em></h3>
+        <p class="dest-tagline">Legendary trade winds · World-class waves · Sal</p>
+        <p class="dest-description">Cape Verde — and particularly Sal island — has been on the radar of advanced water sports riders for decades. The trade winds are among the most consistent on the planet, and the waves that wrap around the volcanic coastlines are genuinely world-class. The kite and usually first Wave Wingfoil world tour stop is right here at Ponta Preta.</p>
+        <p class="dest-description">This island has it all — beginner spots, advanced safe spots up to the scariest waves you will want to ride. It's where you come when you want the real thing, or feel you need some warm weather, relaxed vibe and progress every day of your trip.</p>
+        <p class="dest-description">The island of Sal has flat water lagoons at Santa Maria alongside mild to serious wave spots at Ponta Leme and serious wave spots within a few kilometres on either sides of the island.</p>
+        <p class="dest-description">We do need a pickup but can share fitting up to 4 in a pickup.</p>
+        <div class="spot-details">
+          <div class="spot-detail-row">
+            <span class="label">Best season</span>
+            <span class="value">November – July</span>
+          </div>
+          <div class="spot-detail-row">
+            <span class="label">Wind</span>
+            <span class="value">Passat NE trades, 15–25 kn</span>
+          </div>
+          <div class="spot-detail-row">
+            <span class="label">Level</span>
+            <span class="value tag">Intermediate – Advanced</span>
+          </div>
+          <div class="spot-detail-row">
+            <span class="label">Getting there</span>
+            <span class="value">Direct flights from most of Europe</span>
+          </div>
+        </div>
+        <div class="spot-highlights">
+          <h4>What I'll show you</h4>
+          <ul>
+            <li>Ponta Leme, Kite Beach, Serra Negra, Ponta Preta if it's not squirming with pro's, Canoha, AliBaba — and let you experience the different characters of each spot safely</li>
+            <li>Managing strong, gusty passat wind conditions safely</li>
+            <li>Wave riding on reef and sand bottom — approach and priority rules</li>
+            <li>How to handle the side-offshore moments that make it tricky to actually get on the wave</li>
+          </ul>
+        </div>
+        <div class="dest-cta">
+          <a href="contact.html?type=explore&dest=capeverde" class="btn btn-primary">Register Interest</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- DENMARK / COLD HAWAII -->
+    <div class="destination-block flip">
+      <div class="dest-media">
+        <div class="dest-hero-img">
+          <img src="images/waves_Hanstholm.jpg" alt="Waves Hanstholm" style="width:100%;height:100%;object-fit:cover;display:block;" />
+          <div class="dest-flag">
+            <span class="flag-emoji">🇩🇰</span>
+            <span>Cold Hawaii</span>
+          </div>
+        </div>
+        <div class="dest-thumb-row">
+          <div class="dest-thumb"><img src="images/Klitmøller_bigger_wave-compressed.jpg" alt="Klitmøller wave" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+          <div class="dest-thumb"><img src="images/stoked_cold_Hawaii-compressed.jpg" alt="Stoked Cold Hawaii" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+          <div class="dest-thumb"><img src="images/High_jump_hanstholm.jpg" alt="High Jump Hanstholm" style="width:100%;height:100%;object-fit:cover;display:block;" /></div>
+        </div>
+      </div>
+      <div class="dest-content">
+        <span class="status-badge live">Available Now</span>
+        <span class="dest-label">Northwest Jutland · Denmark</span>
+        <h3>Denmark <em>Where we host foil camps this summer</em></h3>
+        <p class="dest-tagline">North Sea swell · Nordic atmosphere · Raw coastline</p>
+        <p class="dest-description">Klitmøller — Cold Hawaii — is one of my favourite spots alongside Hanstholm and Voropør, the waves are world class and there's plenty of space. It is also pretty safe and relatively easy to get in and out.</p>
+        <p class="dest-description">The name is no accident. This stretch of the Danish coast receives real North Sea swell with consistent westerly winds and a raw Nordic atmosphere that's unlike anywhere in the Mediterranean.</p>
+        <p class="dest-description">Come by camper, there's a great community — or rent a summer house with some friends, or get in touch with me so I can ask my local friends for accommodation options.</p>
+        <p class="dest-description">If you're visiting Denmark, or want to combine a spot experience with a full coaching programme, this is where it all connects. You can do a standalone spot experience, or pair it with a multi-day coaching block.</p>
+        <p class="dest-description">Let me know when you plan to go, I can be up there for the forecast in a day or two depending on traffic.</p>
+        <div class="spot-details">
+          <div class="spot-detail-row">
+            <span class="label">Best season</span>
+            <span class="value">May – October (camps), year-round</span>
+          </div>
+          <div class="spot-detail-row">
+            <span class="label">Wind</span>
+            <span class="value">W/SW, North Sea swell</span>
+          </div>
+          <div class="spot-detail-row">
+            <span class="label">Level</span>
+            <span class="value tag">All levels</span>
+          </div>
+          <div class="spot-detail-row">
+            <span class="label">Getting there</span>
+            <span class="value">Fly Billund / Aalborg, 1.5h drive</span>
+          </div>
+        </div>
+        <div class="spot-highlights">
+          <h4>What makes this special</h4>
+          <ul>
+            <li>Epic spots with beautiful surroundings and a long legacy of watersports — lots of buddies here</li>
+            <li>Combine with camp accommodation or go fully independent</li>
+            <li>The full North Sea wave experience — real conditions, real progression</li>
+            <li>If you want to progress in waves this is your pick — I'll show you how to stay safe and develop your surfing skills</li>
+          </ul>
+        </div>
+        <div class="dest-cta">
+          <a href="contact.html?type=explore&dest=denmark" class="btn btn-primary">Book a Session</a>
+          <a href="camps.html" class="btn btn-ghost-dark">See Full Camps</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ─── HOW IT WORKS ─── -->
+  <section class="how-it-works">
+    <div class="how-it-works-inner">
+      <p class="section-label">The process</p>
+      <h2>How it works</h2>
+      <p class="how-sub">Simple by design. You stay in control, I bring the knowledge.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h4>Register Interest</h4>
+          <p>Tell me your destination, dates, and level. I'll confirm availability.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h4>Book Your Travel</h4>
+          <p>Fly in on your own terms. Stay where you like. Full flexibility.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h4>Pre-Trip Briefing</h4>
+          <p>We connect before you fly. I share a spot guide, gear list, and conditions outlook.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h4>Sessions on the Water</h4>
+          <p>I meet you at the spot. We session, I coach, I film. Every day built around the conditions. I meet you at the spot or we drive together.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <h4>You Leave Better</h4>
+          <p>Video footage, analysis notes, and the confidence to ride these spots again on your own.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">6</div>
+          <h4>Alone or with a Friend Group</h4>
+          <p>You can ask me to coach you 1 on 1 or a group — share the stoke.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── BOTTOM CTA ─── -->
+  <section class="pilot-cta">
+    <div class="pilot-cta-inner">
+      <p class="section-label light">This is a pilot</p>
+      <h2>Be part of<br /><em>building this.</em></h2>
+      <p>I'm taking expressions of interest now to shape the first Explore experiences. First to register influences the format, gets priority access, and earns early-bird pricing when spots open.</p>
+      <div class="cta-actions">
+        <a href="contact.html?type=explore" class="btn btn-primary">Register Interest</a>
+        <a href="contact.html?type=explore&q=1" class="btn btn-ghost">Ask Me Anything</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-logo">Stephan Raidl</p>
+        <p>Wingfoil athlete, coach & camp organiser<br />based in the Netherlands.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="camps.html">Foil Camps</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="coaching.html">Coaching</a></li>
+          <li><a href="partnership.html">Partnership</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Get in touch</h4>
+        <a href="mailto:mail@stephanraidl.eu">mail@stephanraidl.eu</a>
+        <div class="footer-socials">
+          <a href="https://instagram.com/stephanraidl" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Stephan Raidl. All rights reserved.</p>
+      </p>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

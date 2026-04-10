@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Stephan Raidl · Wingfoil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">Stephan Raidl</a>
+    <button class="nav-burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="camps.html">Foil Camps</a></li>
+      <li><a href="explore.html">Explore</a></li>
+          <li><a href="coaching.html">Coaching</a></li>
+      <li><a href="partnership.html">Partnership</a></li>
+      <li><a href="contact.html" class="nav-cta active">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <section class="contact-page">
+    <div class="contact-left">
+      <p class="section-label">Let's talk</p>
+      <h1>Get<br /><em>in touch.</em></h1>
+      <p>Whether you're ready to book a camp, have questions about coaching, or want to explore a partnership — I'd love to hear from you. I reply within 48 hours.</p>
+      <div class="contact-info">
+        <div>
+          <strong>Email</strong>
+          <a href="mailto:mail@stephanraidl.eu">mail@stephanraidl.eu</a>
+        </div>
+        <div>
+          <strong>Instagram</strong>
+          <a href="https://instagram.com/stephanraidl" target="_blank">@stephanraidl</a>
+        </div>
+        <div>
+          <strong>Based in</strong>
+          <span>the Netherlands</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-right">
+      <form class="contact-form" id="contact-form" action="https://formspree.io/f/mjgpqoay" method="POST">
+        <div class="form-group">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" required placeholder="First Last" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" required placeholder="you@email.com" />
+        </div>
+        <div class="form-group">
+          <label for="subject">I'm interested in</label>
+          <select id="subject" name="subject">
+            <option value="">Select…</option>
+            <option value="camp-june">Summer Foil Camp (June)</option>
+            <option value="camp-august">Stormchaser Camp (August)</option>
+            <option value="camp-september">Autumn Sessions (September)</option>
+            <option value="coaching">1-on-1 Coaching</option>
+            <option value="partnership">Partnership / Sponsorship</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="level">Your wingfoil level</label>
+          <select id="level" name="level">
+            <option value="">Select…</option>
+            <option>Complete beginner</option>
+            <option>Can ride / need upwind</option>
+            <option>Intermediate – want to progress</option>
+            <option>Advanced</option>
+            <option>Not applicable (partnership)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about yourself, your goals, or any questions…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary full-width">Send Message</button>
+        <p class="form-note">I'll get back to you within 48 hours. No spam, ever.</p>
+      </form>
+      <div class="form-success" id="form-success" style="display:none">
+        <p>✦ Message sent! I'll be in touch soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-logo">Stephan Raidl</p>
+        <p>Wingfoil athlete, coach & camp organiser<br />based in the Netherlands.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="camps.html">Foil Camps</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="coaching.html">Coaching</a></li>
+          <li><a href="partnership.html">Partnership</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Email</h4>
+        <a href="mailto:mail@stephanraidl.eu">mail@stephanraidl.eu</a>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

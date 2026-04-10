@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foil Camps 2026 — Stephan Raidl · Cold Hawaii</title>
+  <meta name="description" content="Wingfoil camps in Cold Hawaii, Denmark. Week-long immersive experiences for advanced levels. Accommodation included." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .camp-slideshow { position: relative; overflow: hidden; }
+    .camp-slideshow .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.8s ease; }
+    .camp-slideshow .slide:first-child { position: relative; }
+    .camp-slideshow .slide.active { opacity: 1; z-index: 1; }
+    .camp-slideshow .slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .camp-listing-badge { z-index: 2; }
+  </style>
+</head>
+<body>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">Stephan Raidl</a>
+    <button class="nav-burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="camps.html" class="active">Foil Camps</a></li>
+      <li><a href="explore.html">Explore</a></li>
+          <li><a href="coaching.html">Coaching</a></li>
+      <li><a href="partnership.html">Partnership</a></li>
+      <li><a href="contact.html" class="nav-cta">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="hero-bg">
+      <div class="hero-placeholder"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="hero-eyebrow">Cold Hawaii, Denmark</p>
+      <h1>Foil Camps<br /><em>2026</em></h1>
+      <p>Small groups · All levels · Accommodation included</p>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="page-intro">
+    <div class="intro-text">
+      <h2>A week that changes everything</h2>
+      <p>Each camp is designed as a complete experience — great food and stay at the stormfarm, with breakfast, dinner and sauna.</p>
+      <p>Located in Klitmøller we are close to the spot a 15 minutes away from Hanstholm and Voropør so plenty to choose from.
+        In case the wind direction doesn't work we have a lake, and a fjord where we can do downwinders.<p/>
+      <p> The coaching sessions will be in the morning and afternoon about 2h each. We have plenty of gear and are 2 instructors so we can split up into two groups for different levels. Maximum 10 riders per camp, so everyone gets real attention on the water.
+      We have cameras and a professional fotografer and will do analysis on and off the water, explaining the spots and coach you at your level.</p>
+      <p>Klitmøller — Cold Hawaii — is one of the best if not the best northern European wave spots, honouring its name.</p>
+    </div>
+    <div class="intro-includes">
+      <h3>Every camp includes:</h3>
+      <ul>
+        <li>✦ 7 nights accommodation (shared or private)</li>
+        <li>✦ Daily wingfoil sessions (2x per day)</li>
+        <li>✦ Theory & video analysis</li>
+        <li>✦ Equipment available (bring your own or test Armstrong / Duotone gear for free)</li>
+        <li>✦ Daily breakfast</li>
+        <li>✦ Daily dinner</li>
+        <li>✦ Sauna on site 🧖</li>
+        <li>✦ Max 10 riders, 2 coaches — real coaching, real progression</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CAMP LISTINGS -->
+  <section class="camps-full">
+    <h2 class="section-title">2026 Dates</h2>
+
+    <div class="camp-listing">
+      <div class="camp-listing-img camp-slideshow">
+        <div class="slide active"><img src="images/Stormfarmen_wide.jpg" alt="Camp House" /></div>
+        <div class="slide"><img src="images/Still_foild_and_see.jpg" alt="Foil and Sea" /></div>
+        <div class="slide"><img src="images/waves_Hanstholm.jpg" alt="Waves Hanstholm" /></div>
+        <div class="slide"><img src="images/Stoke_water.jpg" alt="Stoke on Water" /></div>
+        <div class="camp-listing-badge">All Levels</div>
+      </div>
+      <div class="camp-listing-body">
+        <p class="camp-listing-date">June 6 – 13, 2026</p>
+        <h3>Summer Foil Camp</h3>
+        <p>Long Nordic days with consistent thermal winds make June the perfect entry point into wingfoil. The lagoons are flat and forgiving — ideal for first flights. Experienced riders can push into the breaks that form just outside.</p>
+        <div class="camp-details-grid">
+          <div><strong>Level</strong><span>All levels</span></div>
+          <div><strong>Group size</strong><span>Max 10 riders</span></div>
+          <div><strong>Duration</strong><span>7 nights / 6 session days, 2 sessions a day</span></div>
+          <div><strong>Location</strong><span>Klitmøller, Cold Hawaii</span></div>
+        </div>
+        <div class="camp-pricing">
+          <div class="price-tier">
+            <span class="tier-name">Shared room</span>
+            <span class="tier-price">€ 1,290</span>
+          </div>
+          <div class="price-tier">
+            <span class="tier-name">Private room</span>
+            <span class="tier-price">€ 1,490</span>
+          </div>
+          <p class="price-note">Price includes accommodation & all camp activities. Travel not included.</p>
+        </div>
+        <div class="camp-listing-actions">
+          <a href="contact.html?camp=june" class="btn btn-primary">Book This Camp</a>
+          <a href="contact.html?camp=june&q=1" class="btn btn-ghost-dark">Ask a Question</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="camp-listing reverse featured-listing">
+      <div class="camp-listing-img camp-slideshow">
+        <div class="slide active"><img src="images/Stormfarmen_wide.jpg" alt="High Jump Hanstholm" /></div>
+        <div class="slide"><img src="images/High_jump_hanstholm.jpg" alt="Backroll" /></div>
+        <div class="slide"><img src="images/waves_Hanstholm.jpg" alt="Waves Hanstholm" /></div>
+        <div class="slide"><img src="images/Foils_Pickup.jpg" alt="Foils in Pickup" /></div>
+        <div class="camp-listing-badge popular">Most Popular</div>
+      </div>
+      <div class="camp-listing-body">
+        <p class="camp-listing-date">July 22 – 29, 2026</p>
+        <h3>Stormchaser Camp</h3>
+        <p>Late July delivers some of the most reliable wind of the year and the first real swells rolling in from the North Sea. This camp is designed for riders who've already found their footing and want to push further — longer runs, waves, and real strapless freedom in peak summer conditions.</p>
+        <div class="camp-details-grid">
+          <div><strong>Level</strong><span>Intermediate +</span></div>
+          <div><strong>Group size</strong><span>Max 10 riders, 2 coaches</span></div>
+          <div><strong>Duration</strong><span>7 nights / 6 session days</span></div>
+          <div><strong>Location</strong><span>Klitmøller, Cold Hawaii</span></div>
+        </div>
+        <div class="camp-pricing">
+          <div class="price-tier">
+            <span class="tier-name">Shared room</span>
+            <span class="tier-price">€ 1,390</span>
+          </div>
+          <div class="price-tier">
+            <span class="tier-name">Private room</span>
+            <span class="tier-price">€ 1,590</span>
+          </div>
+          <p class="price-note">Price includes accommodation & all camp activities. Travel not included.</p>
+        </div>
+        <div class="camp-listing-actions">
+          <a href="contact.html?camp=august" class="btn btn-primary">Book This Camp</a>
+          <a href="contact.html?camp=august&q=1" class="btn btn-ghost-dark">Ask a Question</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="camp-listing">
+      <div class="camp-listing-img camp-slideshow">
+        <div class="slide active"><img src="images/Stormfarmen_wide.jpg" alt="Camp House" /></div>
+        <div class="slide"><img src="images/High_jump_hanstholm.jpg" alt="High jump Hanstholm" /></div>
+        <div class="slide"><img src="images/Stoke_static.jpg" alt="Stoke Static" /></div>
+        <div class="slide"><img src="images/BackRoll.jpg" alt="Backroll" /></div>
+        <div class="camp-listing-badge">All Levels</div>
+      </div>
+      <div class="camp-listing-body">
+        <p class="camp-listing-date">August 4 – 11, 2026</p>
+        <h3>High Summer Camp</h3>
+        <p>Early August is peak season in Cold Hawaii — warm water, strong consistent wind, and the North Sea in full swing. Long evenings, great conditions, and the energy of the season at its highest. All levels welcome to make the most of it.</p>
+        <div class="camp-details-grid">
+          <div><strong>Level</strong><span>All levels</span></div>
+          <div><strong>Group size</strong><span>Max 10 riders</span></div>
+          <div><strong>Duration</strong><span>7 nights / 6 session days</span></div>
+          <div><strong>Location</strong><span>Klitmøller, Cold Hawaii</span></div>
+        </div>
+        <div class="camp-pricing">
+          <div class="price-tier">
+            <span class="tier-name">Shared room</span>
+            <span class="tier-price">€ 1,290</span>
+          </div>
+          <div class="price-tier">
+            <span class="tier-name">Private room</span>
+            <span class="tier-price">€ 1,490</span>
+          </div>
+          <p class="price-note">Price includes accommodation & all camp activities. Travel not included.</p>
+        </div>
+        <div class="camp-listing-actions">
+          <a href="contact.html?camp=september" class="btn btn-primary">Book This Camp</a>
+          <a href="contact.html?camp=september&q=1" class="btn btn-ghost-dark">Ask a Question</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ACCOMMODATION -->
+  <section class="accommodation">
+    <p class="section-label">Where you'll stay</p>
+    <h2>The Camp House</h2>
+    <p class="accom-intro">A warm, well-equipped house steps from the water in Klitmøller. Shared living space, good kitchen, drying room for wetsuits, and the kind of post-session atmosphere that makes a camp more than just training.</p>
+    <div class="accom-gallery">
+      <img src="images/Stormfarmen_wide.jpg" alt="Camp House Wide" class="accom main-accom" style="width:100%;height:100%;object-fit:cover;display:block;" />
+      <img src="images/Stormfarmen_wide2.jpg" alt="Camp House" class="accom" style="width:100%;height:100%;object-fit:cover;display:block;" />
+      <img src="images/Stormfarmen.jpg" alt="Stormfarmen" class="accom" style="width:100%;height:100%;object-fit:cover;display:block;" />
+      <div class="img-placeholder accom"></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <p class="section-label">FAQ</p>
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details>
+        <summary>Do I need my own gear?</summary>
+        <p>Yes you should bring your own setup so you have what you are used to ride. We do have other boards, wings and foils you can try out, but the easiest and best gear is always the gear you know best.</p>
+      </details>
+      <details>
+        <summary>How do I get to Cold Hawaii?</summary>
+        <p>Drive by car, it's about 3–4 hours from Flensburg in Germany. Or fly into Billund (BLL) or Aalborg (AAL), then rent a car for the ~1.5–2h drive to Klitmøller. I can help coordinate arrivals.</p>
+      </details>
+      <details>
+        <summary>What level do I need to be?</summary>
+        <p>You should be able to stand on your board and be able to hold the wing in your hands without falling into the water. It would be beneficial if you have foiled your first meters — jibes and tacks not required but good to have ;-)</p>
+      </details>
+      <details>
+        <summary>What if the wind doesn't show up?</summary>
+        <p>Cold Hawaii is one of the windiest spots in Europe — it almost always delivers. On light-wind days we do theory, video review, dry land drills, or explore the local area. You'll never be bored.</p>
+      </details>
+      <details>
+        <summary>Can I come alone?</summary>
+        <p>Absolutely — most people do. The small group format means you'll quickly feel at home.</p>
+      </details>
+      <details>
+        <summary>What's the cancellation policy?</summary>
+        <p>Full refund up to 60 days before the camp. 50% refund between 30–60 days. Within 30 days, the spot can be transferred to another person. Get in touch and we'll work it out.</p>
+      </details>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-logo">Stephan Raidl</p>
+        <p>Wingfoil athlete, coach & camp organiser<br />based in the Netherlands.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="camps.html">Foil Camps</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="coaching.html">Coaching</a></li>
+          <li><a href="partnership.html">Partnership</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Get in touch</h4>
+        <a href="mailto:mail@stephanraidl.eu">mail@stephanraidl.eu</a>
+        <div class="footer-socials">
+          <a href="https://instagram.com/stephanraidl" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bot</p>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+  <script>
+    document.querySelectorAll('.camp-slideshow').forEach(function(show) {
+      const slides = show.querySelectorAll('.slide');
+      let current = 0;
+      setInterval(function() {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+      }, 5000);
+    });
+  </script>
+</body>
+</html>

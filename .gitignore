@@ -1,0 +1,50 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs & temp
+*.log
+*.tmp
+*.swp
+
+# Node (if you ever add a build step)
+node_modules/
+npm-debug.log*
+
+# Build output
+dist/
+build/
+
+# Environment / secrets
+.env
+.env.local
+
+
+CLAUDE_CODE_GUIDE.md
+
+# Zip archives
+*.zip
+
+# Unused images — full list in unused_images.txt
+images/ArmstrongBoards-compressed.jpg
+images/Armstrong_Golfbag-compressed.jpg
+images/ArmstrongfoilsBalz-compressed.jpg
+images/Me_Armstrongfoil_stand-compressed.jpg
+images/Me_fullcamper_gear-compressed.jpg
+images/Toyota_CapeVerde-compressed.jpg
+images/Toyota_Lights.jpg
+images/Toyota_beach-compressed.jpg
+images/backroll_NL-compressed.jpg
+images/foilbag_packing-compressed.jpg
+images/foilslide_NL-compressed.jpg
+images/high_jump-compressed.jpg
+images/stoked_cab-compressed.jpg
+images/stoked_group_NL-compressed.jpg

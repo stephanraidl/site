@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stephan Raidl — Wingfoil Athlete & Coach · Cold Hawaii Camps 2026</title>
+  <meta name="description" content="Professional wingfoil athlete, 1-on-1 coaching & foil camps in Cold Hawaii, Denmark. Book your adventure." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .camp-slideshow { position: relative; overflow: hidden; }
+    .camp-slideshow .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.8s ease; }
+    .camp-slideshow .slide:first-child { position: relative; }
+    .camp-slideshow .slide.active { opacity: 1; z-index: 1; }
+    .camp-slideshow .slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .insta-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+    .insta-cell { display: block; aspect-ratio: 1; overflow: hidden; }
+    .insta-cell img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+    .insta-cell:hover img { transform: scale(1.05); }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─── -->
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">Stephan Raidl</a>
+    <button class="nav-burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="camps.html">Foil Camps</a></li>
+      <li><a href="explore.html">Explore</a></li>
+          <li><a href="coaching.html">Coaching</a></li>
+      <li><a href="partnership.html">Partnership</a></li>
+      <li><a href="contact.html" class="nav-cta">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- ─── ARMSTRONG LOGO ─── -->
+  <a href="https://armstrongfoils.com/" target="_blank" rel="noopener noreferrer"
+     style="position:fixed;top:72px;right:42px;transform:translateX(50%);z-index:999;opacity:0.85;transition:opacity 0.2s;"
+     onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+    <img src="images/A-logo.avif" alt="Armstrong Foils" style="height:30px;width:auto;filter:brightness(0) invert(1);" />
+  </a>
+
+  <!-- ─── HERO ─── -->
+  <header class="hero">
+    <div class="hero-bg">
+      <img src="images/FoilOnBeach_AliBaba.jpg" alt="Foil setup on Beach Sal AliBaba"/>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+
+      <h1 class="hero-title">
+        <span class="line">FLY.</span>
+        <span class="line">FOIL.</span>
+        <span class="line italic">LIVE.</span>
+      </h1>
+      <p class="hero-sub">Wingfoil athlete · 1-on-1 coaching · Foil camps</p>
+      <div class="hero-actions">
+        <a href="camps.html" class="btn btn-primary">See 2026 Camps</a>
+        <a href="#about" class="btn btn-ghost">Who am I</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </header>
+
+  <!-- ─── ABOUT ─── -->
+  <section class="about" id="about">
+    <div class="about-image">
+      <img src="images/stephan-portrait-shaka.jpg" alt="stephan portrait shaka" />
+      <div class="about-tag">Let's Go</div>
+    </div>
+    <div class="about-content">
+      <p class="section-label">About</p>
+      <h2>Born for the wind.<br /><em>Built for the foil.</em></h2>
+      <p>I've spent the last years chasing winds windows in the northern and southern atlantic, learning the rhythm of the sea and the language of the waves.</p>
+      <p> Winging in the Netherlands, Germany, Denmark to Italy, Madeira, Canary Islands and Cape Verde, every destination has it's magic </p>
+      <p>Proudly sponsored by <a href="https://armstrongfoils.com/" target="_blank" rel="noopener noreferrer" style="color:var(--teal);text-decoration:none;">Armstrong</a>, I am based out of the Netherlands raw, windswept northwest coast — I coach this summer again with Dirk Herpel, Chief Editor of the <a href="https://www.wingsurfersmagazin.de" target="_blank" rel="noopener noreferrer" style="color:var(--teal);text-decoration:none;">wingsurfers magazine</a> in one of the best wave spots in Europe.</p>
+      <p>Whether you're a beginner looking to improve your skills, or an experienced rider looking to push into waves and big air, we will meet you exactly where you are.</p>
+      <ul class="about-pillars">
+        <li>
+          <span class="pillar-icon">◈</span>
+          <div>
+            <strong>1-on-1 Coaching</strong>
+            <span>Personalised progression, your pace</span>
+          </div>
+        </li>
+        <li>
+          <span class="pillar-icon">◈</span>
+          <div>
+            <strong>Foil Camps</strong>
+            <span>Week-long immersive experiences</span>
+          </div>
+        </li>
+        <li>
+          <span class="pillar-icon">◈</span>
+          <div>
+            <strong>Adventures</strong>
+            <span>Remote sessions & foil missions</span>
+          </div>
+        </li>
+      </ul>
+      <a href="coaching.html" class="btn btn-dark">Explore Coaching →</a>
+    </div>
+  </section>
+
+  <!-- ─── CAMPS TEASER ─── -->
+  <section class="camps-teaser">
+    <div class="camps-teaser-header">
+      <p class="section-label light">2026 Season</p>
+      <h2>Foil Camps<br /><em>Cold Hawaii</em></h2>
+      <p class="camps-intro">Small groups. World-class conditions. Accommodation included. All levels welcome.</p>
+    </div>
+    <div class="camps-grid">
+      <div class="camp-card">
+        <div class="camp-img-wrap camp-slideshow">
+          <div class="slide active"><img src="images/Stormfarmen_wide.jpg" alt="Foil Camp" /></div>
+          <div class="slide"><img src="images/Still_foild_and_see.jpg" alt="Foil and Sea" /></div>
+          <div class="slide"><img src="images/waves_Hanstholm.jpg" alt="Waves Hanstholm" /></div>
+          <div class="slide"><img src="images/High_jump_hanstholm.jpg" alt="High Jump above windsurfers" /></div>
+        </div>
+        <div class="camp-info">
+          <span class="camp-date">June 6 – 13, 2026</span>
+          <h3>Early Summer Foil Camp</h3>
+          <p>Long Nordic evenings, best start of the summer. Early progression and advanced riders.</p>
+          <div class="camp-meta">
+            <span>All levels</span>
+            <span>Max 10 riders</span>
+            <span>7 nights incl.</span>
+          </div>
+          <a href="camps.html" class="btn btn-outline">Details & Book</a>
+        </div>
+      </div>
+      <div class="camp-card featured">
+        <div class="camp-badge">Most Popular</div>
+        <div class="camp-img-wrap camp-slideshow">
+          <div class="slide active"><img src="images/Stormfarmen_wide.jpg" alt="High Jump Hanstholm" /></div>
+          <div class="slide"><img src="images/High_jump_hanstholm.jpg" alt="High Jump above windsurfers" /></div>
+          <div class="slide"><img src="images/waves_Hanstholm.jpg" alt="Waves Hanstholm" /></div>
+          <div class="slide"><img src="images/Stoke_water.jpg" alt="Stoke on Water" /></div>
+        </div>
+        <div class="camp-info">
+          <span class="camp-date">July 22 – 29, 2026</span>
+          <h3>July Camp</h3>
+          <p>Late July wind and swells. Early progression and advanced riders.</p>
+          <div class="camp-meta">
+            <span>Intermediate+</span>
+            <span>Max 10 riders</span>
+            <span>7 nights incl.</span>
+          </div>
+          <a href="camps.html" class="btn btn-outline">Details & Book</a>
+        </div>
+      </div>
+      <div class="camp-card">
+        <div class="camp-img-wrap camp-slideshow">
+          <div class="slide active"><img src="images/Stormfarmen_wide.jpg" alt="Camp House" /></div>
+          <div class="slide"><img src="images/High_jump_hanstholm.jpg" alt="Team SAL" /></div>
+          <div class="slide"><img src="images/Still_foild_and_see.jpg" alt="Foil and Sea" /></div>
+          <div class="slide"><img src="images/BackRoll.jpg" alt="Footprint in Sand" /></div>
+        </div>
+        <div class="camp-info">
+          <span class="camp-date">August 4 – 11, 2026</span>
+          <h3>High Summer Camp</h3>
+          <p>Peak season in Cold Hawaii. Warm water, long evenings on the water. All levels.</p>
+          <div class="camp-meta">
+            <span>All levels</span>
+            <span>Max 10 riders</span>
+            <span>7 nights incl.</span>
+          </div>
+          <a href="camps.html" class="btn btn-outline">Details & Book</a>
+        </div>
+      </div>
+    </div>
+    <div class="camps-cta">
+      <a href="camps.html" class="btn btn-primary">View All Camps & Dates</a>
+    </div>
+  </section>
+
+  <!-- ─── SPONSORS ─── -->
+  <section class="sponsors">
+    <p class="section-label">Supported by</p>
+    <div class="sponsors-row">
+      <!-- Replace these with real sponsor logos -->
+      <a href="https://armstrongfoils.com" target="_blank" class="sponsor-logo-link">
+  <img src="images/A-logo.avif" alt="Sponsor Name" style="height:36px;width:auto;opacity:0.7;filter:brightness(0) invert(1);" />
+    </a>
+      <!-- <div class="sponsor-logo">SPONSOR 1</div> -->
+      <!-- <div class="sponsor-logo">SPONSOR 2</div> -->
+      <!-- <div class="sponsor-logo">SPONSOR 3</div> -->
+    </div>
+    <a href="partnership.html" class="sponsor-cta">Interested in partnership? →</a>
+  </section>
+
+  <!-- ─── TESTIMONIALS ─── -->
+  <section class="testimonials">
+    <p class="section-label">From past campers</p>
+    <h2>What riders say</h2>
+    <div class="testimonials-grid">
+      <blockquote>
+        <p>"Sometimes you need a push, a tip at the right moment, an insight that only an experienced rider can give you.
+        It might be simple, but it makes you progress so much. Stephan is that guy that can help you unlock your next level and give you confidence"</p>
+        <cite>— Jesper H., Denmark</cite>
+      </blockquote>
+      <blockquote>
+        <p>"Cold Hawaii was beautiful. The location, the waves, the food, the coaches — I'll be back next year."</p>
+        <cite>— Vascu J., Finland</cite>
+      </blockquote>
+      <blockquote>
+        <p>"The 1-on-1 coaching was exactly what I needed to break through my plateau. Worth every single cent."</p>
+        <cite>— Michiel R., Netherlands</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ─── INSTAGRAM STRIP ─── -->
+  <section class="insta-strip">
+    <p class="section-label">Follow the adventure</p>
+    <p class="insta-handle"><a href="https://instagram.com/stephanraidl" target="_blank">@stephanraidl</a></p>
+    <div class="insta-grid">
+      <a href="https://instagram.com/stephanraidl" target="_blank" class="insta-cell"><img src="images/BackRoll.jpg" alt="Backroll" /></a>
+      <a href="https://instagram.com/stephanraidl" target="_blank" class="insta-cell"><img src="images/Team_SAL.jpg" alt="Team SAL" /></a>
+      <a href="https://instagram.com/stephanraidl" target="_blank" class="insta-cell"><img src="images/1stPlaceX15-compressed.jpg" alt="1st Place X15" /></a>
+      <a href="https://instagram.com/stephanraidl" target="_blank" class="insta-cell"><img src="images/Team_extended_SAL.jpg" alt="Team SAL Extended" /></a>
+      <a href="https://instagram.com/stephanraidl" target="_blank" class="insta-cell"><img src="images/High_jump_hanstholm.jpg" alt="High Jump Hanstholm" /></a>
+      <a href="https://instagram.com/stephanraidl" target="_blank" class="insta-cell"><img src="images/shiny_pickup_SAL-compressed.jpg" alt="Pickup SAL" /></a>
+      <a href="https://instagram.com/stephanraidl" target="_blank" class="insta-cell"><img src="images/spot_view5-compressed.jpg" alt="Spot View" /></a>
+      <a href="https://instagram.com/stephanraidl" target="_blank" class="insta-cell"><img src="images/Me_FehmarnFestival-compressed.jpg" alt="Fehmarn Festival" /></a>
+      <a href="https://instagram.com/stephanraidl" target="_blank" class="insta-cell"><img src="images/Trust_your_foil-compressed.jpg" alt="Trust Your Foil" /></a>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-logo">Stephan Raidl</p>
+        <p>Wingfoil athlete, coach & camp organiser<br />based in the Netherlands.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="camps.html">Foil Camps</a></li>
+          <li><a href="explore.html">Explore</a></li>
+          <li><a href="coaching.html">Coaching</a></li>
+          <li><a href="partnership.html">Partnership</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Get in touch</h4>
+        <a href="mailto:mail@stephanraidl.eu">mail@stephanraidl.eu</a>
+        <div class="footer-socials">
+          <a href="https://instagram.com/stephanraidl" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Stephan Raidl. All rights reserved.</p>
+      </p>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+  <script>
+    document.querySelectorAll('.camp-slideshow').forEach(function(show) {
+      const slides = show.querySelectorAll('.slide');
+      let current = 0;
+      setInterval(function() {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+      }, 5000);
+    });
+  </script>
+</body>
+</html>
