@@ -49,10 +49,11 @@
   <!-- ─── HERO ─── -->
   <header class="hero">
     <div class="hero-bg">
-      <img id="hero-still" src="images/FoilOnBeach_AliBaba.jpg" alt="Foil setup on Beach Sal AliBaba" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 1s ease;z-index:1;" />
-      <video id="hero-video" muted playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s ease;z-index:2;" ></video>
+      <video id="hero-video" muted autoplay playsinline loop poster="images/FoilOnBeach_AliBaba.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;">
+        <source src="movies/combined_desktop.mp4" type="video/mp4" />
+      </video>
     </div>
-    <div class="hero-overlay" style="z-index:3;"></div>
+    <div class="hero-overlay" style="z-index:10;"></div>
     <div class="hero-content">
 
       <h1 class="hero-title">
@@ -287,51 +288,11 @@
       }, 5000);
     });
 
-    // ─── HERO VIDEO SEQUENCE ───
-    const heroStill = document.getElementById('hero-still');
+    // ─── HERO VIDEO — swap to mobile src on small screens ───
     const heroVideo = document.getElementById('hero-video');
-    if (heroStill && heroVideo) {
-      const isMobile = window.innerWidth <= 768;
-      const clips = isMobile ? [
-        'movies/mobile_Serra_Nega_large_jump_slowmo.mp4',
-        'movies/mobile_Serra_Negra_large_jump_over_wave.mp4',
-        'movies/mobile_Serra_Negra_large_nice_wave.mp4',
-        'movies/mobile_Serra_Negra_large_slow_wave_Pass.mp4',
-        'movies/mobile_Serra_negra_large_one_turn.mp4'
-      ] : [
-        'movies/hq_Serra_Nega_large_jump_slowmo.mp4',
-        'movies/hq_Serra_Negra_large_jump_over_wave.mp4',
-        'movies/hq_Serra_Negra_large_nice_wave.mp4',
-        'movies/hq_Serra_Negra_large_slow_wave_Pass.mp4',
-        'movies/hq_Serra_negra_large_one_turn.mp4'
-      ];
-      let clipIndex = 0;
-
-      function playClip(index) {
-        heroVideo.src = clips[index];
-        heroVideo.load();
-        heroVideo.play().then(() => {
-          // fade out still, fade in video
-          heroStill.style.opacity = '0';
-          heroVideo.style.opacity = '1';
-        }).catch(() => {});
-      }
-
-      heroVideo.addEventListener('ended', () => {
-        clipIndex++;
-        if (clipIndex >= clips.length) {
-          // all clips done — show still for 3 seconds then loop
-          heroVideo.style.opacity = '0';
-          heroStill.style.opacity = '1';
-          clipIndex = 0;
-          setTimeout(() => playClip(0), 3000);
-        } else {
-          playClip(clipIndex);
-        }
-      });
-
-      // start first clip immediately
-      playClip(0);
+    if (heroVideo && window.innerWidth <= 768) {
+      heroVideo.src = 'movies/combined_mobile.mp4';
+      heroVideo.load();
     }
   </script>
 </body>
