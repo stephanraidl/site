@@ -348,6 +348,7 @@ a { color: inherit; text-decoration: none; }
 /* PAGE HERO (inner pages) */
 .page-hero {
   position: relative;
+  z-index: 0;
   height: 65vh;
   min-height: 420px;
   display: flex;
