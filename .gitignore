@@ -27,7 +27,11 @@ build/
 .env
 .env.local
 
+# sublime text project 
+website.sublime-project
+website.sublime-workspace
 
+# md files, text files 
 CLAUDE_CODE_GUIDE.md
 optimisations.md
 things_for_me_to_do.txt
@@ -49,3 +53,20 @@ images/foilbag_packing-compressed.jpg
 images/foilslide_NL-compressed.jpg
 images/high_jump-compressed.jpg
 images/stoked_cab-compressed.jpg
+
+# Unused video files — originals and intermediate encodes
+movies/Serra_Nega_large_jump_slowmo.mp4
+movies/Serra_Negra_large_jump_over_wave.mp4
+movies/Serra_Negra_large_nice_wave.mp4
+movies/Serra_Negra_large_slow wave_Pass.mp4
+movies/Serra_negra_large_one_turn.mp4
+movies/web_Serra_Nega_large_jump_slowmo.mp4
+movies/web_Serra_Negra_large_jump_over_wave.mp4
+movies/web_Serra_Negra_large_nice_wave.mp4
+movies/web_Serra_Negra_large_slow wave_Pass.mp4
+movies/web_Serra_negra_large_one_turn.mp4
+movies/bright_web_Serra_Nega_large_jump_slowmo.mp4
+movies/bright_web_Serra_Negra_large_jump_over_wave.mp4
+movies/bright_web_Serra_Negra_large_nice_wave.mp4
+movies/bright_web_Serra_Negra_large_slow wave_Pass.mp4
+movies/bright_web_Serra_negra_large_one_turn.mp4
