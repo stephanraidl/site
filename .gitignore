@@ -15,6 +15,9 @@ Thumbs.db
 *.tmp
 *.swp
 
+#claude skills
+.claude/skills/
+
 # Node (if you ever add a build step)
 node_modules/
 npm-debug.log*
